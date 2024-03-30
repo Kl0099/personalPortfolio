@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+	--font-base: "DM Sans", sans-serif;
+  
+	--primary-color: #edf2f8; slate color
+	--secondary-color: #313bac; blue
+	--black-color: #030303;
+	--lightGray-color: #e4e4e4;	
+	--gray-color: #6b7688;
+	--brown-color: #46364a;
+	--white-color: #ffffff; whitecolor
+  } */
