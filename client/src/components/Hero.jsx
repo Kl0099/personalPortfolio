@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="sm:ml-20 relative flex h-[100vh] flex-1 items-center">
       <div className=" z-20  mb-5   flex flex-col justify-center">
-        <div className="mb-10 text-[48px] font-semibold">
+        <div className="mb-10 text-[52px] font-semibold">
           <p>Welcome To </p>
           <p>My Personal Portfolio</p>
         </div>

@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import FirstSection from "./components/FirstSection";
 import PortfolioSection from "./components/PortfolioSection";
+import SkillsAndExperience from "./components/SkillsAndExperience";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -15,6 +17,8 @@ function App() {
       <Hero />
       <FirstSection />
       <PortfolioSection />
+      <SkillsAndExperience />
+      <ContactUs />
     </div>
   );
 }

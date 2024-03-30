@@ -26,9 +26,9 @@ const FirstSection = () => {
     },
   ];
   return (
-    <div className="flex flex-col items-center w-11/12 mx-auto max-w-maxContent h-[80vh] justify-center ">
-      <div className=" h-[0px] sm:h-[20vh]"></div>
-      <div className=" mb-10 font-semibold text-center text-[48px] capitalize ">
+    <div className="flex flex-col items-center w-11/12 mx-auto max-w-maxContent  justify-center ">
+      {/* <div className=" h-[0px] sm:h-[20vh]"></div> */}
+      <div className=" mb-10 font-semibold text-center text-[52px] capitalize ">
         <p>
           {" "}
           I Know That <SpanText text={"Good Design"} />{" "}
