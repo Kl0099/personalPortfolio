@@ -17,6 +17,7 @@ const PortfolioSection = () => {
       githubLink: "",
       liveLink: "",
       category: "FullStack",
+      imagelink: about3,
     },
     {
       name: "Social Media",
@@ -25,6 +26,8 @@ const PortfolioSection = () => {
       githubLink: "",
       liveLink: "",
       category: "FullStack",
+      imagelink:
+        "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902654/portfolio/Screenshot_2024-02-28_222223_s5ddkf.png",
     },
     {
       name: "Blog Application",
@@ -33,6 +36,8 @@ const PortfolioSection = () => {
       githubLink: "",
       liveLink: "",
       category: "FullStack",
+      imagelink:
+        "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902511/portfolio/Screenshot_19_dntitr.png",
     },
     {
       name: "StudyNotion",
@@ -41,6 +46,8 @@ const PortfolioSection = () => {
       githubLink: "",
       liveLink: "",
       category: "FullStack",
+      imagelink:
+        "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902925/portfolio/Screenshot_2024-03-31_220430_clrdep.png",
     },
     {
       name: "Nike LandingPage",
@@ -48,6 +55,8 @@ const PortfolioSection = () => {
       githubLink: "",
       liveLink: "",
       category: "UI/UX",
+      imagelink:
+        "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902560/portfolio/Screenshot_2024-02-11_112456_k4te81.png",
     },
     {
       name: "Study Mates",
@@ -55,6 +64,7 @@ const PortfolioSection = () => {
       githubLink: "",
       liveLink: "",
       category: "Hackathon",
+      imagelink: about3,
     },
     {
       name: "fresh gueid",
@@ -62,6 +72,7 @@ const PortfolioSection = () => {
       githubLink: "",
       liveLink: "",
       category: "Hackathon",
+      imagelink: about3,
     },
     {
       name: "Webefy",
@@ -69,6 +80,7 @@ const PortfolioSection = () => {
       githubLink: "",
       liveLink: "",
       category: "mini",
+      imagelink: about3,
     },
   ];
   const links = ["All", "FullStack", "UI/UX", "Hackathon", "mini"];
@@ -131,8 +143,9 @@ const PortfolioSection = () => {
             >
               <img
                 alt={project.name}
-                src={about3}
+                src={project.imagelink}
                 className=" hover:opacity-90 opacity-80  cursor-pointer shadow-xl object-cover w-[300px] h-[270px] rounded-2xl"
+                loading="lazy"
               />
               <p className=" z-10 -mt-9 bg-white text-richblue-300 p-2 shadow-lg rounded-lg">
                 {project.category}
