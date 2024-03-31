@@ -60,7 +60,9 @@ exports.createCategory = async (req, res) => {
 
     category = category.toLowerCase();
 
-    const projectcategory = await ProjectCategory.create({ name: category });
+    const projectcategory = await ProjectCategory.create({
+      name: category,
+    });
 
     return res.status(200).json({
       success: true,
