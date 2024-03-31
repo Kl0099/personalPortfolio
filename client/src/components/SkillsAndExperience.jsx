@@ -82,14 +82,14 @@ const SkillsAndExperience = () => {
     },
   ];
   return (
-    <div className=" w-11/12 max-w-maxContent flex-col mx-auto flex items-center h-[100vh]">
-      <div className=" h-[20vh]"></div>
+    <div className=" w-full sm:w-11/12 max-w-maxContent flex-col flex items-center ">
+      <div className=" h-[10vh] md::h-[20vh]"></div>
 
-      <h1 className=" text-[48px] text-center font-semibold">
+      <h1 className=" text-4xl md:text-[52px] text-center font-semibold">
         Skills And <SpanText text={"Archivements"} />
       </h1>
-      <div className=" gap-[27px] flex  my-10 items-center justify-between ">
-        <div className=" flex   flex-wrap gap-6 w-[40%]">
+      <div className=" gap-[27px] sm:flex-row flex-col flex  my-10 items-center justify-between ">
+        <div className=" items-center justify-center flex w-full  flex-wrap gap-6 sm:w-[40%]">
           {skills.map((skill, index) => (
             <div
               key={index}
@@ -112,15 +112,15 @@ const SkillsAndExperience = () => {
           {Archivements.map((item, index) => (
             <div
               key={index}
-              className=" items-baseline   m-5 flex gap-5 "
+              className="  items-baseline flex-col sm:flex-row m-5 flex gap-2 sm:gap-5 "
             >
               <SpanText
                 textsize={"text-[18px]"}
                 text={item.year}
               ></SpanText>
               <div className=" w-full text-sm ">
-                <p className=" w-[80%] mb-2 text-xl">{item.title}</p>
-                <p className=" w-[60%] text-sm text-richblack-300">
+                <p className=" w-full sm:w-[80%] mb-2 text-xl">{item.title}</p>
+                <p className=" w-full sm:w-[60%] text-sm text-richblack-300">
                   {item.description}
                 </p>
               </div>

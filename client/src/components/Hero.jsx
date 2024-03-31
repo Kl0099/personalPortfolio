@@ -3,9 +3,9 @@ import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import bgImageTag from "./bgImageTag";
 const Hero = () => {
   return (
-    <div className="sm:ml-20 relative flex h-[100vh] flex-1 items-center">
+    <div className="sm:ml-20 relative flex-col-reverse md:mt-0 mt-9  sm:flex-raw flex h-[100vh] flex-1 items-center">
       <div className=" z-20  mb-5   flex flex-col justify-center">
-        <div className="mb-10 text-[52px] font-semibold">
+        <div className="mb-10 text-4xl md:text-[52px] font-semibold">
           <p>Welcome To </p>
           <p>My Personal Portfolio</p>
         </div>
@@ -20,7 +20,7 @@ const Hero = () => {
         </p>
       </div>
       {/* image section  */}
-      <div className=" w-[100%] h-[300px]   overflow-hidden text-lightgrey  text-3xl">
+      <div className=" mb-4 w-[100%] h-[300px]   overflow-hidden text-lightgrey  text-3xl">
         <svg
           className="BgAnimation__svg"
           viewBox="0 0 602 602"

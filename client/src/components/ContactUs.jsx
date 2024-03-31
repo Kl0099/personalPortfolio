@@ -1,46 +1,131 @@
 import React from "react";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
-
+import { SiLeetcode, SiMailchimp, SiMaildotcom } from "react-icons/si";
+import { SiGeeksforgeeks } from "react-icons/si";
+import { CiMail, CiPhone } from "react-icons/ci";
+import { MdLocationOn } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
 const ContactUs = () => {
+  const langtitude = 23.0080312;
+  const longitude = 72.5823307;
+  const socialMediaLinks = [
+    {
+      name: "Github",
+      logo: RxGithubLogo,
+      color: "black",
+      classname: "",
+      link: "https://github.com/Kl0099",
+    },
+    {
+      name: "Linkedin",
+      logo: RxLinkedinLogo,
+      color: "blue",
+      classname: "",
+      link: "https://www.linkedin.com/in/krunal-lodha-90393a257/",
+    },
+    {
+      name: "Leetcode",
+      logo: SiLeetcode,
+      color: "black",
+      classname: " bg-yellow-50 rounded-full p-1",
+      link: "https://leetcode.com/krunal99",
+    },
+    {
+      name: "Geeksforgeeks",
+      logo: SiGeeksforgeeks,
+      color: "green",
+      classname: "https://auth.geeksforgeeks.org/user/krunallhh4i",
+    },
+  ];
   return (
-    <div className="  items-center h-[90vh] w-11/12">
+    <div className="   ">
       <div className=" h-[20vh]"></div>
-      <p className=" text-[48px] font-inter font-semibold text-center">
+      <p className=" text-[48px] mb-10 font-inter font-semibold text-center">
         Chat With Me
       </p>
-      <div className=" flex ">
-        <form className=" border w-[90%]  items-center flex flex-col gap-7">
+      <div className=" flex-col md:flex-row flex items-baseline justify-around">
+        <form className=" rounded-lg bg-primary shadow-2xl py-6 justify-center md:w-[40%] w-full items-center flex flex-col gap-7">
+          <h1 className="mb-4 text-3xl  font-semibold">Contact Us </h1>
           <input
             type="text"
             name="name"
             id="name"
             placeholder="Your Name"
-            className=" rounded-lg border-none shadow-lg p-2 w-[60%]"
+            className=" rounded-lg border-none shadow-lg p-2 w-[80%]"
           />
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Your Email"
-            className="rounded-lg border-none shadow-lg p-2 w-[60%]"
+            className="rounded-lg border-none shadow-lg p-2 w-[80%]"
           />
           <textarea
-            className=" rounded-lg border-none p-2 shadow-lg w-[60%] min-h-[150px] "
+            className=" rounded-lg border-none p-2 shadow-lg w-[80%] min-h-[150px] "
             placeholder="Your message"
           ></textarea>
+          <button
+            className=" p-3 bg-caribbeangreen-700 text-white w-[80%] rounded-lg"
+            type="submit"
+          >
+            Submit
+          </button>
         </form>
-        <div className=" border items-center w-[40%] my-5 p-4 justify-between">
-          <p className=" text-center text-3xl ">Social Media Links</p>
-          <div className="flex border text-4xl gap-10 items-center">
-            <p>
-              <RxGithubLogo />{" "}
+        <div className=" flex flex-col justify-between bg-primary shadow-lg w-full md:w-[40%] my-2 rounded-lg p-6 ">
+          <div>
+            <p className=" text-center text-3xl ">Social Media Links</p>
+            <p className="text-xs text-richblue-100 mt-5">
+              click on the logo to visit the links
             </p>
-            <p>
-              <RxLinkedinLogo />
+            <div className="flex mt-7 text-2xl  md:text-4xl justify-between md:justify-around items-center">
+              {socialMediaLinks.map((item, index) => (
+                <div
+                  key={index}
+                  className="  items-center justify-center flex flex-col gap-3"
+                >
+                  <p className=" w-fit p-2 shadow-xl rounded-full bg-white hover:scale-95 cursor-pointer  hover:shadow-2xl">
+                    <a href={item.link}>
+                      <item.logo
+                        color={item.color}
+                        className={item.classname}
+                      />
+                    </a>
+                  </p>
+                  <span className=" text-xs md:text-sm">{item.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className=" mt-10 flex flex-col mb-5">
+            <h1 className="mt-10 mb-5  text-center text-3xl">
+              Direct Contact me
+            </h1>
+            <p className=" flex items-center gap-4">
+              <span className="p-2 shadow-lg rounded-full">
+                <CiMail
+                  color="black"
+                  size={22}
+                />
+              </span>
+              <span className=" text-base md:text-xl text-richblack-500">
+                krunallodha1@gmail.com
+              </span>
+            </p>
+            <p className=" mt-4 flex items-center gap-4">
+              <span className="p-2 shadow-lg rounded-full">
+                <FaPhone
+                  color="black"
+                  size={22}
+                />
+              </span>
+              <span className=" text-base md:text-xl text-richblack-500">
+                +91 88663166**
+              </span>
             </p>
           </div>
         </div>
       </div>
+      <div className=" h-[20vh]"></div>
     </div>
   );
 };

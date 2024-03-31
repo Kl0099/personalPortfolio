@@ -12,7 +12,7 @@ function App() {
   // const [count, setCount] = useState(0);
 
   return (
-    <div className="w-11/12 max-w-maxContent mx-auto  relative text-black">
+    <div className=" w-[95%] md:w-11/12 max-w-maxContent mx-auto  relative text-black">
       <NavBar />
       <Hero />
       <FirstSection />

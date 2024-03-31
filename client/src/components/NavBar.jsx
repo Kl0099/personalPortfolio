@@ -30,7 +30,7 @@ const NavBar = () => {
     },
   ];
   return (
-    <div className=" bg-lightgrey z-50   sticky top-0">
+    <div className=" bg-lightgrey z-50  sticky top-0">
       <div className="  flex items-center justify-between">
         <div className=" p-3 w-fit  rounded-full drop-shadow-2xl  font-extrabold text-3xl text-richblue-400">
           KRU<span className=" text-richblue-300">NAL</span>

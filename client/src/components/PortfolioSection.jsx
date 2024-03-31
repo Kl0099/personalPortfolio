@@ -93,28 +93,35 @@ const PortfolioSection = () => {
     <div className="mt-20 items-center flex flex-col  ">
       <div className=" h-[0px] sm:h-[10vh]"></div>
       <div className="mx-auto items-center flex flex-col">
-        <h1 className=" font-semibold text-[52px]">
+        <h1 className=" font-semibold text-4xl md:text-[52px]">
           My Creative <SpanText text={"Portfolio Section"} />
         </h1>
-        <p className=" text-center text-richblack-400 my-5 w-7/12">
+        <p className=" text-left md:text-center text-richblack-400 my-5 w-full md:w-7/12">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
           voluptatem repudiandae eos suscipit deserunt, dolores ut quas, est
           maxime, consequatur minus? Ducimus perferendis porro quis ullam, earum
           provident dolorum qui.
         </p>
 
-        <div className=" flex gap-7 my-10 ">
-          {links.map((link, index) => (
-            <div
-              className={`bg-white px-3 ${
-                link === currnetLink ? " bg-caribbeangreen-700 text-white" : ""
-              } p-2 rounded-xl cursor-pointer hover:scale-95 hover:shadow-lg`}
-              key={index}
-              onClick={() => setCurrentLink(link)}
-            >
-              {link}
-            </div>
-          ))}
+        <div className=" flex-wrap items-center justify-center flex gap-7 my-10 ">
+          {links.map((link, index) => {
+            {
+              // console.log("link :", link === currnetLink);
+            }
+            return (
+              <div
+                className={`  px-3 ${
+                  link === currnetLink
+                    ? " bg-secondary text-white"
+                    : " text-richblack-900 bg-white"
+                } p-2 rounded-xl cursor-pointer hover:scale-95 hover:shadow-lg`}
+                key={index}
+                onClick={() => setCurrentLink(link)}
+              >
+                {link}
+              </div>
+            );
+          })}
         </div>
         <div className=" justify-center items-start  gap-5 flex flex-wrap max-w-maxContent w-11/12">
           {projects.map((project, index) => (

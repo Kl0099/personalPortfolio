@@ -27,9 +27,9 @@ const FirstSection = () => {
   ];
   return (
     <div className="flex flex-col items-center w-11/12 mx-auto max-w-maxContent  justify-center ">
-      {/* <div className=" h-[0px] sm:h-[20vh]"></div> */}
-      <div className=" mb-10 font-semibold text-center text-[52px] capitalize ">
-        <p>
+      <div className=" h-[10vh] sm:h-[20vh]"></div>
+      <div className=" mb-10 font-semibold text-center text-4xl md:text-[52px] capitalize ">
+        <p className=" mb-5">
           {" "}
           I Know That <SpanText text={"Good Design"} />{" "}
         </p>
@@ -37,7 +37,7 @@ const FirstSection = () => {
           means <SpanText text={"Good Business"} />
         </p>
       </div>
-      <div className=" mb-10 flex gap-10">
+      <div className=" flex-col sm:flex-row mb-10 flex gap-10">
         {cards.map((card, index) => (
           <div
             key={index}
