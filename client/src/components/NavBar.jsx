@@ -29,10 +29,12 @@ const NavBar = () => {
       path: "#contact",
     },
   ];
+
+  // gradiant = bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] text-transparent bg-clip-text font-bold
   return (
-    <div className=" bg-lightgrey z-50  sticky top-0">
+    <div className="max-w-maxContent w-11/12 mx-auto relative z-50 sticky top-0">
       <div className="  flex items-center justify-between">
-        <div className=" p-3 w-fit  rounded-full drop-shadow-2xl  font-extrabold text-3xl text-richblue-400">
+        <div className=" p-3 w-fit  rounded-full drop-shadow-2xl  font-extrabold text-3xl text-richblue-400 dark:text-richblack-200">
           KRU<span className=" text-richblue-300">NAL</span>
         </div>
         <div className=" hidden sm:flex items-center gap-5 text-pure-greys-400 text-md">
@@ -45,19 +47,32 @@ const NavBar = () => {
             </div>
           ))}
         </div>
+        <div>
+          <button
+            className=" sm:block hidden dark:bg-richblack-300"
+            onClick={() => document.body.classList.toggle("dark")}
+            id="darkModeToggle"
+          >
+            Toggle Dark Mode
+          </button>
+        </div>
+
         <div
           onClick={() => setMenuOpen(!menuOpen)}
-          className=" block sm:invisible cursor-pointer p-2 hover:shadow-md rounded-full hover:shadow-lightgrey z-50"
+          className=" block sm:hidden cursor-pointer p-2 hover:shadow-md rounded-full hover:shadow-lightgrey z-50"
         >
           {menuOpen ? (
             <RxCross1 fontSize={24} />
           ) : (
-            <AiOutlineMenu fontSize={24} />
+            <AiOutlineMenu
+              className=" dark:text-richblack-5"
+              fontSize={24}
+            />
           )}
         </div>
       </div>
       {menuOpen && (
-        <div className=" bg-white flex items-start  flex-col rounded-lg drop-shadow-xl shadow-lightgrey shadow-2xl absolute w-[70%] h-full z-10 top-[0px] right-[0px] transition-transform duration-1000 ease-linear transform translate-x-1">
+        <div className="h-[600px] bg-white flex items-start  flex-col rounded-lg  shadow-lightgrey shadow-2xl absolute w-[90%]  z-10 top-[0px] right-[0px] transition-transform duration-1000 ease-linear transform translate-x-1">
           <div className=" mt-20">
             {links.map((links, index) => (
               <div
@@ -68,6 +83,15 @@ const NavBar = () => {
                 {links.name}
               </div>
             ))}
+            <div>
+              <button
+                className=" dark:bg-richblack-300"
+                onClick={() => document.body.classList.toggle("dark")}
+                id="darkModeToggle"
+              >
+                Toggle Dark Mode
+              </button>
+            </div>
           </div>
         </div>
       )}

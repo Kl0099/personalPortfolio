@@ -83,10 +83,14 @@ const SkillsAndExperience = () => {
   ];
   return (
     <div className=" w-full sm:w-11/12 max-w-maxContent flex-col flex items-center ">
-      <div className=" h-[10vh] md::h-[20vh]"></div>
+      <div className=" h-[10vh] md:h-[20vh]"></div>
 
-      <h1 className=" text-4xl md:text-[52px] text-center font-semibold">
-        Skills And <SpanText text={"Archivements"} />
+      <h1 className=" dark:text-richblack-900 text-4xl md:text-[52px] text-center font-semibold">
+        Skills And{" "}
+        <SpanText
+          dark={"dark:text-richblack-25"}
+          text={"Archivements"}
+        />
       </h1>
       <div className=" gap-[27px] sm:flex-row flex-col flex  my-10 items-center justify-between ">
         <div className=" items-center justify-center flex w-full  flex-wrap gap-6 sm:w-[40%]">
@@ -95,7 +99,7 @@ const SkillsAndExperience = () => {
               key={index}
               className=" flex flex-col items-center"
             >
-              <div className=" bg-lightgrey hover:shadow-2xl hover:scale-105  p-4 shadow-xl shadow-richblack-50 rounded-full">
+              <div className=" bg-lightgrey hover:shadow-2xl hover:scale-105  p-4 shadow-xl dark:shadow-md shadow-richblack-50 rounded-full">
                 <img
                   className="  object-cover"
                   width={40}
@@ -104,7 +108,9 @@ const SkillsAndExperience = () => {
                   alt={skill.name}
                 />
               </div>
-              <p className=" text-[15px] mt-5">{skill.name}</p>
+              <p className=" dark:text-richblack-300 text-[15px] mt-5">
+                {skill.name}
+              </p>
             </div>
           ))}
         </div>
@@ -115,17 +121,20 @@ const SkillsAndExperience = () => {
               className="  items-baseline flex-col sm:flex-row m-5 flex gap-2 sm:gap-5 "
             >
               <SpanText
+                dark={"dark:text-richblack-300"}
                 textsize={"text-[18px]"}
                 text={item.year}
               ></SpanText>
               <div className=" w-full text-sm ">
-                <p className=" w-full sm:w-[80%] mb-2 text-xl">{item.title}</p>
+                <p className=" dark:text-lightgrey w-full sm:w-[80%] mb-2 text-xl">
+                  {item.title}
+                </p>
                 <p className=" w-full sm:w-[60%] text-sm text-richblack-300">
                   {item.description}
                 </p>
               </div>
               <a
-                className=" text-secondary  cursor-pointer underline"
+                className=" dark:text-white text-secondary  cursor-pointer underline"
                 href={item.certificate}
               >
                 Certificate

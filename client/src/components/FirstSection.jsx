@@ -29,11 +29,11 @@ const FirstSection = () => {
     <div className="flex flex-col items-center w-11/12 mx-auto max-w-maxContent  justify-center ">
       <div className=" h-[10vh] sm:h-[20vh]"></div>
       <div className=" mb-10 font-semibold text-center text-4xl md:text-[52px] capitalize ">
-        <p className=" mb-5">
+        <p className=" dark:text-richblue-100 mb-5">
           {" "}
           I Know That <SpanText text={"Good Design"} />{" "}
         </p>
-        <p>
+        <p className=" dark:text-richblue-100">
           means <SpanText text={"Good Business"} />
         </p>
       </div>
@@ -48,10 +48,12 @@ const FirstSection = () => {
               src={card.image}
               className=" shadow-xl object-cover w-[300px] h-[270px] rounded-2xl"
             />
-            <h1 className=" text-xl font-semibold text-richblue-400">
+            <h1 className=" dark:text-richblack-50 text-xl font-semibold text-richblue-400">
               {card.name}
             </h1>
-            <p className=" text-base text-richblack-600">{card.description}</p>
+            <p className=" dark:text-richblue-100 text-base text-richblack-600">
+              {card.description}
+            </p>
           </div>
         ))}
       </div>

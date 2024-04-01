@@ -40,38 +40,38 @@ const ContactUs = () => {
   return (
     <div className="   ">
       <div className=" h-[20vh]"></div>
-      <p className=" text-[48px] mb-10 font-inter font-semibold text-center">
+      <p className=" dark:text-primary text-[48px] mb-10 font-inter font-semibold text-center">
         Chat With Me
       </p>
       <div className=" flex-col md:flex-row flex items-baseline justify-around">
-        <form className=" rounded-lg bg-primary shadow-2xl py-6 justify-center md:w-[40%] w-full items-center flex flex-col gap-7">
+        <form className=" dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 rounded-lg bg-primary shadow-2xl py-6 justify-center md:w-[40%] w-full items-center flex flex-col gap-7">
           <h1 className="mb-4 text-3xl  font-semibold">Contact Us </h1>
           <input
             type="text"
             name="name"
             id="name"
             placeholder="Your Name"
-            className=" rounded-lg border-none shadow-lg p-2 w-[80%]"
+            className=" dark:bg-richblack-700 rounded-lg border-none shadow-lg p-2 w-[80%]"
           />
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Your Email"
-            className="rounded-lg border-none shadow-lg p-2 w-[80%]"
+            className="dark:bg-richblack-700 rounded-lg border-none shadow-lg p-2 w-[80%]"
           />
           <textarea
-            className=" rounded-lg border-none p-2 shadow-lg w-[80%] min-h-[150px] "
+            className="dark:bg-richblack-700 rounded-lg border-none p-2 shadow-lg w-[80%] min-h-[150px] "
             placeholder="Your message"
           ></textarea>
           <button
-            className=" p-3 bg-caribbeangreen-700 text-white w-[80%] rounded-lg"
+            className=" dark:border-b-caribbeangreen-25 p-3 bg-caribbeangreen-700 text-white w-[80%] rounded-lg"
             type="submit"
           >
             Submit
           </button>
         </form>
-        <div className=" flex flex-col justify-between bg-primary shadow-lg w-full md:w-[40%] my-2 rounded-lg p-6 ">
+        <div className="dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 dark:text-primary flex flex-col justify-between bg-primary shadow-lg w-full md:w-[40%] my-2 rounded-lg p-6 ">
           <div>
             <p className=" text-center text-3xl ">Social Media Links</p>
             <p className="text-xs text-richblue-100 mt-5">
@@ -101,18 +101,18 @@ const ContactUs = () => {
               Direct Contact me
             </h1>
             <p className=" flex items-center gap-4">
-              <span className="p-2 shadow-lg rounded-full">
+              <span className="p-2 dark:bg-primary shadow-lg rounded-full">
                 <CiMail
                   color="black"
                   size={22}
                 />
               </span>
-              <span className=" text-base md:text-xl text-richblack-500">
+              <span className="  text-base md:text-xl text-richblack-500">
                 krunallodha1@gmail.com
               </span>
             </p>
             <p className=" mt-4 flex items-center gap-4">
-              <span className="p-2 shadow-lg rounded-full">
+              <span className="dark:bg-primary p-2 shadow-lg rounded-full">
                 <FaPhone
                   color="black"
                   size={22}

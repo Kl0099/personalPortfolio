@@ -3,16 +3,18 @@ import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import bgImageTag from "./bgImageTag";
 const Hero = () => {
   return (
-    <div className="sm:ml-20 relative flex-col-reverse md:mt-0 mt-9  sm:flex-row flex h-[100vh] flex-1 items-center">
+    <div className="max-w-maxContent w-11/12 mx-auto  sm:ml-20 relative flex-col-reverse md:mt-0 mt-9  sm:flex-row flex h-[100vh] flex-1 items-center">
       <div className=" z-20  mb-5   flex flex-col justify-center">
-        <div className="mb-10 text-4xl md:text-[52px] font-semibold">
+        <div className="mb-10 text-4xl md:text-[52px] font-semibold dark:bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] dark:text-transparent dark:bg-clip-text md:py-5">
           <p className=" mb-4">Welcome To </p>
           <p>My Personal Portfolio</p>
         </div>
         <div className=" mb-3 relative flex flex-col">
-          <span className=" text-[32px]">I'm Krunal Lodha</span>
+          <span className="dark:bg-gradient-to-r from-[#93a0a9] via-[#12D8FA] to-[#000402]  dark:text-transparent dark:bg-clip-text text-[32px]">
+            I'm Krunal Lodha
+          </span>
         </div>
-        <p className="  text-sm w-[90%]">
+        <p className=" dark:text-richblack-200 text-sm w-[90%]">
           Welcome to my website! Please take your time to explore my portfolio
           and discover all of my projects. If you find something that interests
           you, don't hesitate to reach out to me. I'm excited to connect with

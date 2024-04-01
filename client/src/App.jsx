@@ -61,16 +61,33 @@ function App() {
     <div>Loading...</div>
   ) : (
     category && projects && (
-      <div className=" w-[95%] md:w-11/12 max-w-maxContent mx-auto  relative text-black">
-        <NavBar />
-        <Hero />
-        <FirstSection />
-        <PortfolioSection
-          category={category}
-          allprojects={projects}
-        />
-        <SkillsAndExperience />
-        <ContactUs />
+      <div className=" w-full dark:bg-richblack-900 relative text-black">
+        <div className=" ">
+          <div className="dark:bg-richblack-900 bg-lightgrey ">
+            <NavBar />
+          </div>
+          <div className="max-w-maxContent  sm:w-11/12 mx-auto">
+            <Hero />
+          </div>
+          <div className="max-w-maxContent  sm:w-11/12 mx-auto">
+            <FirstSection />
+          </div>
+          <div className="max-w-maxContent  sm:w-11/12 mx-auto">
+            <PortfolioSection
+              category={category}
+              allprojects={projects}
+            />
+          </div>
+
+          <div className=" dark:bg-gradient-to-t from-richblack-900 via-blue-600 to-cyan-400">
+            <div className="  sm:w-11/12 max-w-maxContent mx-auto">
+              <SkillsAndExperience />
+            </div>
+          </div>
+          <div className=" max-w-maxContent sm:w-11/12 mx-auto">
+            <ContactUs />
+          </div>
+        </div>
       </div>
     )
   );
