@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import "./App.css";
 import NavBar from "./components/NavBar";
@@ -7,19 +7,72 @@ import FirstSection from "./components/FirstSection";
 import PortfolioSection from "./components/PortfolioSection";
 import SkillsAndExperience from "./components/SkillsAndExperience";
 import ContactUs from "./components/ContactUs";
-
+import axios from "axios";
 function App() {
-  // const [count, setCount] = useState(0);
+  const [category, setCategory] = useState(null);
+  const [projects, SetProjects] = useState(null);
+  const [responsedata, setresponsedata] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  return (
-    <div className=" w-[95%] md:w-11/12 max-w-maxContent mx-auto  relative text-black">
-      <NavBar />
-      <Hero />
-      <FirstSection />
-      <PortfolioSection />
-      <SkillsAndExperience />
-      <ContactUs />
-    </div>
+  const fetchdata = async () => {
+    setLoading(true);
+    try {
+      console.log("Fetching data...");
+      const response = await axios.get(
+        "http://localhost:4000/api/v1/getAllDetails",
+        {
+          withCredentials: true,
+        }
+      );
+      if (response) {
+        // console.log(response);
+        setCategory(response.data.category.map((item) => item.name));
+        SetProjects(
+          response.data.projects.map((item) => {
+            const { _id, __v, updatedAt, createdAt, ...rest } = item;
+            return rest;
+          })
+        );
+        setresponsedata(response);
+      }
+      console.log("bye bye ");
+    } catch (error) {
+      console.log(error.message);
+    }
+    setLoading(false);
+  };
+  useEffect(() => {
+    fetchdata();
+  }, []);
+  useEffect(() => {
+    if (category) {
+      category.unshift("All");
+      console.log("All categories", category);
+      console.log("all projects : ", projects);
+    }
+  }, [category, projects]);
+  // useEffect(() => {
+  //   // console.log("responsedata : ", responsedata);
+  //   console.log("categories : ", category);
+  //   console.log("Projects : ", projects);
+  // }, [responsedata, category, projects]);
+
+  return loading ? (
+    <div>Loading...</div>
+  ) : (
+    category && projects && (
+      <div className=" w-[95%] md:w-11/12 max-w-maxContent mx-auto  relative text-black">
+        <NavBar />
+        <Hero />
+        <FirstSection />
+        <PortfolioSection
+          category={category}
+          allprojects={projects}
+        />
+        <SkillsAndExperience />
+        <ContactUs />
+      </div>
+    )
   );
 }
 

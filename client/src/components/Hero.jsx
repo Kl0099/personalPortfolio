@@ -3,10 +3,10 @@ import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import bgImageTag from "./bgImageTag";
 const Hero = () => {
   return (
-    <div className="sm:ml-20 relative flex-col-reverse md:mt-0 mt-9  sm:flex-raw flex h-[100vh] flex-1 items-center">
+    <div className="sm:ml-20 relative flex-col-reverse md:mt-0 mt-9  sm:flex-row flex h-[100vh] flex-1 items-center">
       <div className=" z-20  mb-5   flex flex-col justify-center">
         <div className="mb-10 text-4xl md:text-[52px] font-semibold">
-          <p>Welcome To </p>
+          <p className=" mb-4">Welcome To </p>
           <p>My Personal Portfolio</p>
         </div>
         <div className=" mb-3 relative flex flex-col">

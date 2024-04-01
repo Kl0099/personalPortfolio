@@ -148,3 +148,31 @@ exports.deleteCategory = async (req, res) => {
     });
   }
 };
+
+exports.getAllDetails = async (req, res) => {
+  try {
+    // console.log("ewwwwwwwwwwwww");
+    let category = [];
+    let projectDetails = [];
+    const Allcategory = await ProjectCategory.find({}).exec();
+    // category.push(Allcategory);
+    // console.log(Allcategory);
+    const projects = await Project.find({}).exec();
+    // projectDetails.push(projects);
+
+    // console.log(projects);
+    // console.log("bye : ");
+    return res.status(200).json({
+      success: true,
+      message: "successfully get all details",
+      category: Allcategory,
+      projects: projects,
+    });
+  } catch (error) {
+    console.log("error while get requiest : ");
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};

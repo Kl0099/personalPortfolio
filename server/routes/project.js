@@ -4,9 +4,10 @@ const {
   updateProject,
   deleteCategory,
   createCategory,
+  getAllDetails,
 } = require("../controllers/project");
 const router = express.Router();
-
+router.get("/getAllDetails", getAllDetails);
 router.post("/createProject", createProject);
 router.post("/updateProject", updateProject);
 router.post("/createCategory", createCategory);

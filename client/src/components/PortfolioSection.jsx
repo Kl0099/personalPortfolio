@@ -9,89 +9,91 @@ import {
   RxGithubLogo,
   RxPencil1,
 } from "react-icons/rx";
-const PortfolioSection = () => {
-  const projectLinks = [
-    {
-      name: "Airbnb",
-      description: "Airbnb web site using ejs templetes ",
-      githubLink: "",
-      liveLink: "",
-      category: "FullStack",
-      imagelink: about3,
-    },
-    {
-      name: "Social Media",
-      description:
-        "socila media wesite using react | reduxtoolkit | css | nodejs | javascript,etc...",
-      githubLink: "",
-      liveLink: "",
-      category: "FullStack",
-      imagelink:
-        "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902654/portfolio/Screenshot_2024-02-28_222223_s5ddkf.png",
-    },
-    {
-      name: "Blog Application",
-      description:
-        "Blog Application wesite using react | reduxtoolkit | tailwindcss | nodejs | javascript,etc...",
-      githubLink: "",
-      liveLink: "",
-      category: "FullStack",
-      imagelink:
-        "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902511/portfolio/Screenshot_19_dntitr.png",
-    },
-    {
-      name: "StudyNotion",
-      description:
-        "Study Notionwebsite using react | reduxtoolkit | tailwindcss | nodejs | javascript,etc...",
-      githubLink: "",
-      liveLink: "",
-      category: "FullStack",
-      imagelink:
-        "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902925/portfolio/Screenshot_2024-03-31_220430_clrdep.png",
-    },
-    {
-      name: "Nike LandingPage",
-      description: "Nike Lnadingpage is ui design using react and tailwindcss",
-      githubLink: "",
-      liveLink: "",
-      category: "UI/UX",
-      imagelink:
-        "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902560/portfolio/Screenshot_2024-02-11_112456_k4te81.png",
-    },
-    {
-      name: "Study Mates",
-      description: "study mates is a hackathon Edtech project.",
-      githubLink: "",
-      liveLink: "",
-      category: "Hackathon",
-      imagelink: about3,
-    },
-    {
-      name: "fresh gueid",
-      description: "Fresh gueid is frontend project with react ",
-      githubLink: "",
-      liveLink: "",
-      category: "Hackathon",
-      imagelink: about3,
-    },
-    {
-      name: "Webefy",
-      description: "webefy is ui design using html css and javascript.",
-      githubLink: "",
-      liveLink: "",
-      category: "mini",
-      imagelink: about3,
-    },
-  ];
-  const links = ["All", "FullStack", "UI/UX", "Hackathon", "mini"];
-  const [currnetLink, setCurrentLink] = useState(links[0]);
-  const [projects, setProjects] = useState(projectLinks);
+const PortfolioSection = ({ category, allprojects }) => {
+  // const projectLinks = [
+  //   {
+  //     name: "Airbnb",
+  //     description: "Airbnb web site using ejs templetes ",
+  //     githubLink: "",
+  //     liveLink: "",
+  //     category: "FullStack",
+  //     imagelink: about3,
+  //   },
+  //   {
+  //     name: "Social Media",
+  //     description:
+  //       "socila media wesite using react | reduxtoolkit | css | nodejs | javascript,etc...",
+  //     githubLink: "",
+  //     liveLink: "",
+  //     category: "FullStack",
+  //     imagelink:
+  //       "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902654/portfolio/Screenshot_2024-02-28_222223_s5ddkf.png",
+  //   },
+  //   {
+  //     name: "Blog Application",
+  //     description:
+  //       "Blog Application wesite using react | reduxtoolkit | tailwindcss | nodejs | javascript,etc...",
+  //     githubLink: "",
+  //     liveLink: "",
+  //     category: "FullStack",
+  //     imagelink:
+  //       "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902511/portfolio/Screenshot_19_dntitr.png",
+  //   },
+  //   {
+  //     name: "StudyNotion",
+  //     description:
+  //       "Study Notionwebsite using react | reduxtoolkit | tailwindcss | nodejs | javascript,etc...",
+  //     githubLink: "",
+  //     liveLink: "",
+  //     category: "FullStack",
+  //     imagelink:
+  //       "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902925/portfolio/Screenshot_2024-03-31_220430_clrdep.png",
+  //   },
+  //   {
+  //     name: "Nike LandingPage",
+  //     description: "Nike Lnadingpage is ui design using react and tailwindcss",
+  //     githubLink: "",
+  //     liveLink: "",
+  //     category: "UI/UX",
+  //     imagelink:
+  //       "https://res.cloudinary.com/dkzp8h6xw/image/upload/v1711902560/portfolio/Screenshot_2024-02-11_112456_k4te81.png",
+  //   },
+  //   {
+  //     name: "Study Mates",
+  //     description: "study mates is a hackathon Edtech project.",
+  //     githubLink: "",
+  //     liveLink: "",
+  //     category: "Hackathon",
+  //     imagelink: about3,
+  //   },
+  //   {
+  //     name: "fresh gueid",
+  //     description: "Fresh gueid is frontend project with react ",
+  //     githubLink: "",
+  //     liveLink: "",
+  //     category: "Hackathon",
+  //     imagelink: about3,
+  //   },
+  //   {
+  //     name: "Webefy",
+  //     description: "webefy is ui design using html css and javascript.",
+  //     githubLink: "",
+  //     liveLink: "",
+  //     category: "mini",
+  //     imagelink: about3,
+  //   },
+  // ];
+  // const links = ["All", "FullStack", "UI/UX", "Hackathon", "mini"];
+  const [currnetLink, setCurrentLink] = useState(category[0]);
+  const [projects, setProjects] = useState(allprojects);
   useEffect(() => {
-    const newProjects = projectLinks.filter(
-      (project) => project.category == currnetLink
+    console.log("currnetLink :", currnetLink);
+    console.log("categories  :", category[0]);
+    const newProjects = allprojects.filter(
+      (project) => project.projectCategory === currnetLink
     );
     if (currnetLink === "All") {
-      newProjects.push(...projectLinks);
+      newProjects.push(...allprojects);
     }
     setProjects(newProjects);
     // console.log(newProjects);
@@ -116,7 +118,7 @@ const PortfolioSection = () => {
         </p>
 
         <div className=" flex-wrap items-center justify-center flex gap-7 my-10 ">
-          {links.map((link, index) => {
+          {category?.map((link, index) => {
             {
               // console.log("link :", link === currnetLink);
             }
@@ -143,12 +145,12 @@ const PortfolioSection = () => {
             >
               <img
                 alt={project.name}
-                src={project.imagelink}
+                src={project.thumbnail}
                 className=" hover:opacity-90 opacity-80  cursor-pointer shadow-xl object-cover w-[300px] h-[270px] rounded-2xl"
                 loading="lazy"
               />
               <p className=" z-10 -mt-9 bg-white text-richblue-300 p-2 shadow-lg rounded-lg">
-                {project.category}
+                {project.projectCategory}
               </p>
               <div className=" py-5 flex items-center flex-col justify-between ">
                 <h1 className=" text-xl font-semibold text-richblue-400">
