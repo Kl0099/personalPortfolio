@@ -13,3 +13,67 @@
 	--brown-color: #46364a;
 	--white-color: #ffffff; whitecolor
   } */
+
+/* @keyframes pulse {
+    50% {
+        opacity: .5;
+    }
+}
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+} */
+
+@keyframes color-change {
+  0% {
+    color: #484d4d;
+  }
+  50% {
+    color: #1f8597;
+  }
+  100% {
+    color: #fbfcfc;
+  }
+}
+.color-changing {
+  background: linear-gradient(to right, #93a0a9, #12d8fa, #eff0f0);
+  background-size: 200% auto; /* Ensure the gradient covers the whole element */
+  background-clip: text; /* Clip the background to the text */
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  color: transparent; /* Make the text transparent initially */
+  animation: color-change 9s linear infinite;
+}
+@keyframes icon-change {
+  0% {
+    color: #fbfcfc;
+  }
+  50% {
+    color: #103b43;
+  }
+  100% {
+    color: #484d4d;
+  }
+}
+.icon-changing {
+  background: linear-gradient(to right, #93a0a9, #12d8fa, #eff0f0);
+  background-size: 200% auto; /* Ensure the gradient covers the whole element */
+  background-clip: text; /* Clip the background to the text */
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  color: transparent; /* Make the text transparent initially */
+  animation: icon-change 9s linear infinite;
+}
+/* #93a0a9
+#12D8FA
+#000402 */
+
+@keyframes example {
+  50% {
+    /* transform: scale(1.05); */
+    opacity: 0.5;
+  }
+}
+
+.examplepulse {
+  background-image: linear-gradient(to right, #93a0a9, #12d8fa, #000402);
+  animation: example 4s cubic-bezier(0.4, 0, 0.6, 1) infinite ease-in-out;
+  background-clip: text;
+}

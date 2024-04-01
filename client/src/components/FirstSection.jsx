@@ -31,7 +31,7 @@ const FirstSection = () => {
       <div className=" h-[10vh] sm:h-[20vh]"></div>
       <div className=" mb-10 font-semibold text-center text-4xl md:text-[52px] capitalize ">
         <motion.p
-          variants={fadeIn("right", 0.4)}
+          variants={fadeIn("right", 0.1)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}
@@ -41,7 +41,7 @@ const FirstSection = () => {
           I Know That <SpanText text={"Good Design"} />{" "}
         </motion.p>
         <motion.p
-          variants={fadeIn("left", 0.2)}
+          variants={fadeIn("left", 0.1)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}
@@ -51,7 +51,7 @@ const FirstSection = () => {
         </motion.p>
       </div>
       <motion.div className=" h-[5vh] md:h-[10vh]"></motion.div>
-      <div className=" flex-col sm:flex-row mb-10 flex gap-10">
+      <div className="  flex-wrap mb-10 flex gap-10">
         {cards.map((card, index) => (
           <motion.div
             variants={fadeIn("down", 0.1)}

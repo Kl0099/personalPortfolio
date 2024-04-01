@@ -51,9 +51,9 @@ function App() {
       console.log("all projects : ", projects);
     }
   }, [category, projects]);
-  useEffect(() => {
-    document.body.classList.toggle("dark");
-  }, []);
+  // useEffect(() => {
+  //   document.body.classList.toggle("dark");
+  // }, []);
   // useEffect(() => {
   //   // console.log("responsedata : ", responsedata);
   //   console.log("categories : ", category);
@@ -64,8 +64,8 @@ function App() {
     <div>Loading...</div>
   ) : (
     category && projects && (
-      <div className=" w-full dark:bg-richblack-900 relative text-black">
-        <div className=" ">
+      <div className="  w-full dark:bg-richblack-900 relative text-black">
+        <div className=" border-black border-2">
           <div className="dark:bg-richblack-900 bg-lightgrey ">
             <NavBar />
           </div>
@@ -82,7 +82,7 @@ function App() {
             />
           </div>
 
-          <div className=" dark:bg-gradient-to-t from-richblack-900 via-blue-600 to-cyan-400">
+          <div className=" w-full  dark:bg-gradient-to-t from-richblack-900 via-blue-600 to-cyan-400">
             <div className="  sm:w-11/12 max-w-maxContent mx-auto">
               <SkillsAndExperience />
             </div>

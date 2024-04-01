@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AiFillCloseSquare,
   AiOutlineMenu,
   AiOutlineMenuUnfold,
 } from "react-icons/ai";
-import { RxCross1 } from "react-icons/rx";
+import { RxCross1, RxMoon, RxSun } from "react-icons/rx";
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const links = [
     {
       name: "HOME",
@@ -29,13 +30,27 @@ const NavBar = () => {
       path: "#contact",
     },
   ];
+  const setDarkMode = () => {
+    if (isDarkMode) {
+      document.body.classList.remove("dark");
+      setIsDarkMode(false);
+      return;
+    } else {
+      document.body.classList.toggle("dark");
+      setIsDarkMode(true);
+    }
+  };
+  useEffect(() => {
+    document.body.classList.toggle("dark");
+    setIsDarkMode(true);
+  }, []);
 
   // gradiant = bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] text-transparent bg-clip-text font-bold
   return (
-    <div className="max-w-maxContent w-11/12 mx-auto relative z-50 sticky top-0">
+    <div className="max-w-maxContent w-11/12 mx-auto  z-50 sticky top-0">
       <div className="  flex items-center justify-between">
-        <div className=" p-3 w-fit  rounded-full drop-shadow-2xl  font-extrabold text-3xl text-richblue-400 dark:text-richblack-200">
-          KRU<span className=" text-richblue-300">NAL</span>
+        <div className="color-changing p-3 w-fit  rounded-full drop-shadow-2xl  font-extrabold text-3xl text-richblue-400 dark:text-richblack-200">
+          KRU<span className="icon-changing text-richblue-300">NAL</span>
         </div>
         <div className=" hidden sm:flex items-center gap-5 text-pure-greys-400 text-md">
           {links.map((links, index) => (
@@ -50,10 +65,10 @@ const NavBar = () => {
         <div>
           <button
             className=" sm:block hidden dark:bg-richblack-300"
-            onClick={() => document.body.classList.toggle("dark")}
+            onClick={setDarkMode}
             id="darkModeToggle"
           >
-            Toggle Dark Mode
+            {isDarkMode ? <RxMoon size={32} /> : <RxSun size={32} />}
           </button>
         </div>
 

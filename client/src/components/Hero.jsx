@@ -14,23 +14,23 @@ const Hero = () => {
         className=" z-20  mb-5   flex flex-col justify-center"
       >
         <motion.div
-          variants={fadeIn("up", 0.5)}
+          variants={fadeIn("up", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}
-          className="mb-10 text-4xl md:text-[52px] font-semibold dark:bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] dark:text-transparent dark:bg-clip-text md:py-5"
+          className="  mb-10 text-4xl md:text-[52px] font-semibold dark:bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] dark:text-transparent dark:bg-clip-text md:py-5"
         >
           <p className=" mb-4">Welcome To </p>
           <p>My Personal Portfolio</p>
         </motion.div>
         <motion.div
-          variants={fadeIn("right", 0.5)}
+          variants={fadeIn("right", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}
           className=" mb-3 relative flex flex-col"
         >
-          <span className="dark:bg-gradient-to-r from-[#93a0a9] via-[#12D8FA] to-[#000402]  dark:text-transparent dark:bg-clip-text text-[32px]">
+          <span className="dark:bg-gradient-to-r  animate-pulse from-[#93a0a9] via-[#12D8FA] to-[#000402]  dark:text-transparent dark:bg-clip-text text-[32px]">
             I'm Krunal Lodha
           </span>
         </motion.div>
@@ -42,14 +42,14 @@ const Hero = () => {
         </p>
       </motion.div>
       {/* image section  */}
-      <div className=" mb-4 w-[100%] h-[300px]   overflow-hidden text-lightgrey  text-3xl">
+      <div className=" animate-pulse   mb-4 w-[100%] max-h-[500px]   overflow-hidden   text-3xl">
         <svg
           className="BgAnimation__svg"
           viewBox="0 0 602 602"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g opacity="0.15">
+          <g opacity="100">
             <path
               fillRule="evenodd"
               clipRule="evenodd"

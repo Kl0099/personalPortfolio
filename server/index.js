@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 const DataBase = require("./config/DataBase");
 const ProjectRoutes = require("./routes/project");
+const MailRoute = require("./routes/sendmail");
 
 DataBase.connect();
 app.use(express.json({ limit: "10mb" }));
@@ -15,6 +16,7 @@ app.use(
 );
 
 app.use("/api/v1", ProjectRoutes);
+app.use("/api/v1", MailRoute);
 
 const port = process.env.PORT || 4000;
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import { SiLeetcode, SiMailchimp, SiMaildotcom } from "react-icons/si";
 import { SiGeeksforgeeks } from "react-icons/si";
@@ -7,9 +7,16 @@ import { MdLocationOn } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { fadeIn } from "../varients";
 import { motion } from "framer-motion";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { mailsendUrl } from "../helpers/apiurl";
 const ContactUs = () => {
-  const langtitude = 23.0080312;
-  const longitude = 72.5823307;
+  const [email, setEmail] = useState("");
+  const [name, setname] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  // const langtitude = 23.0080312;
+  // const longitude = 72.5823307;
   const socialMediaLinks = [
     {
       name: "Github",
@@ -39,28 +46,45 @@ const ContactUs = () => {
       classname: "https://auth.geeksforgeeks.org/user/krunallhh4i",
     },
   ];
+
+  const sendInfo = async () => {
+    const toastid = toast.loading("Please wait...");
+    setLoading(true);
+    try {
+      const response = await axios.post(
+        mailsendUrl,
+        {
+          name: name,
+          email: email,
+          message: message,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+      console.log("response", response.data.message);
+      toast.success(" message sent successfully");
+      setEmail("");
+      setMessage("");
+      setname("");
+    } catch (error) {
+      console.log("error while sending mail : ", error.message);
+      toast.error("something went wrong!!!");
+    }
+    setLoading(false);
+    toast.dismiss(toastid);
+  };
   return (
     <div className="   ">
       <div className=" h-[20vh]"></div>
       <p className=" dark:text-primary text-[48px] mb-10 font-inter font-semibold text-center">
         Chat With Me
       </p>
-      <motion.div
-        variants={fadeIn("up", 0.2)}
-        initial="hidden"
-        viewport={{ once: false, amount: 0.7 }}
-        whileInView={"show"}
-        className=" flex-col md:flex-row flex items-baseline justify-around"
-      >
-        <motion.form
-          variants={fadeIn("left", 0.5)}
-          initial="hidden"
-          viewport={{ once: false, amount: 0.7 }}
-          whileInView={"show"}
-          className=" dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 rounded-lg bg-primary shadow-2xl py-6 justify-center md:w-[40%] w-full items-center flex flex-col gap-7"
-        >
+      <motion.div className=" flex-col md:flex-row flex items-baseline justify-around">
+        <motion.form className=" dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 rounded-lg bg-primary shadow-2xl py-6 justify-center md:w-[40%] w-full items-center flex flex-col gap-7">
           <h1 className="mb-4 text-3xl  font-semibold">Contact Us </h1>
           <input
+            onChange={(e) => setname(e.target.value)}
             type="text"
             name="name"
             id="name"
@@ -68,6 +92,7 @@ const ContactUs = () => {
             className=" dark:bg-richblack-700 rounded-lg border-none shadow-lg p-2 w-[80%]"
           />
           <input
+            onChange={(e) => setEmail(e.target.value)}
             type="email"
             name="email"
             id="email"
@@ -75,23 +100,20 @@ const ContactUs = () => {
             className="dark:bg-richblack-700 rounded-lg border-none shadow-lg p-2 w-[80%]"
           />
           <textarea
+            onChange={(e) => setMessage(e.target.value)}
             className="dark:bg-richblack-700 rounded-lg border-none p-2 shadow-lg w-[80%] min-h-[150px] "
             placeholder="Your message"
           ></textarea>
           <button
+            onClick={sendInfo}
             className=" dark:border-b-caribbeangreen-25 p-3 bg-caribbeangreen-700 text-white w-[80%] rounded-lg"
             type="submit"
+            disabled={loading}
           >
-            Submit
+            {loading ? "Loading..." : "Submit"}
           </button>
         </motion.form>
-        <motion.div
-          variants={fadeIn("right", 0.5)}
-          initial="hidden"
-          viewport={{ once: false, amount: 0.7 }}
-          whileInView={"show"}
-          className="dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 dark:text-primary flex flex-col justify-between bg-primary shadow-lg w-full md:w-[40%] my-2 rounded-lg p-6 "
-        >
+        <motion.div className="dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 dark:text-primary flex flex-col justify-between bg-primary shadow-lg w-full md:w-[40%] my-2 rounded-lg p-6 ">
           <div>
             <p className=" text-center text-3xl ">Social Media Links</p>
             <p className="text-xs text-richblue-100 mt-5">
