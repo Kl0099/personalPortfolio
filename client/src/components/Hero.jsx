@@ -1,26 +1,46 @@
 import React from "react";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import bgImageTag from "./bgImageTag";
+import { motion } from "framer-motion";
+import { fadeIn } from "../varients";
 const Hero = () => {
   return (
     <div className="max-w-maxContent w-11/12 mx-auto  sm:ml-20 relative flex-col-reverse md:mt-0 mt-9  sm:flex-row flex h-[100vh] flex-1 items-center">
-      <div className=" z-20  mb-5   flex flex-col justify-center">
-        <div className="mb-10 text-4xl md:text-[52px] font-semibold dark:bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] dark:text-transparent dark:bg-clip-text md:py-5">
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className=" z-20  mb-5   flex flex-col justify-center"
+      >
+        <motion.div
+          variants={fadeIn("up", 0.5)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="mb-10 text-4xl md:text-[52px] font-semibold dark:bg-gradient-to-b from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB] dark:text-transparent dark:bg-clip-text md:py-5"
+        >
           <p className=" mb-4">Welcome To </p>
           <p>My Personal Portfolio</p>
-        </div>
-        <div className=" mb-3 relative flex flex-col">
+        </motion.div>
+        <motion.div
+          variants={fadeIn("right", 0.5)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className=" mb-3 relative flex flex-col"
+        >
           <span className="dark:bg-gradient-to-r from-[#93a0a9] via-[#12D8FA] to-[#000402]  dark:text-transparent dark:bg-clip-text text-[32px]">
             I'm Krunal Lodha
           </span>
-        </div>
+        </motion.div>
         <p className=" dark:text-richblack-200 text-sm w-[90%]">
           Welcome to my website! Please take your time to explore my portfolio
           and discover all of my projects. If you find something that interests
           you, don't hesitate to reach out to me. I'm excited to connect with
           you!
         </p>
-      </div>
+      </motion.div>
       {/* image section  */}
       <div className=" mb-4 w-[100%] h-[300px]   overflow-hidden text-lightgrey  text-3xl">
         <svg

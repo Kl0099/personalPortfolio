@@ -5,6 +5,8 @@ import { SiGeeksforgeeks } from "react-icons/si";
 import { CiMail, CiPhone } from "react-icons/ci";
 import { MdLocationOn } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
+import { fadeIn } from "../varients";
+import { motion } from "framer-motion";
 const ContactUs = () => {
   const langtitude = 23.0080312;
   const longitude = 72.5823307;
@@ -43,8 +45,20 @@ const ContactUs = () => {
       <p className=" dark:text-primary text-[48px] mb-10 font-inter font-semibold text-center">
         Chat With Me
       </p>
-      <div className=" flex-col md:flex-row flex items-baseline justify-around">
-        <form className=" dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 rounded-lg bg-primary shadow-2xl py-6 justify-center md:w-[40%] w-full items-center flex flex-col gap-7">
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        viewport={{ once: false, amount: 0.7 }}
+        whileInView={"show"}
+        className=" flex-col md:flex-row flex items-baseline justify-around"
+      >
+        <motion.form
+          variants={fadeIn("left", 0.5)}
+          initial="hidden"
+          viewport={{ once: false, amount: 0.7 }}
+          whileInView={"show"}
+          className=" dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 rounded-lg bg-primary shadow-2xl py-6 justify-center md:w-[40%] w-full items-center flex flex-col gap-7"
+        >
           <h1 className="mb-4 text-3xl  font-semibold">Contact Us </h1>
           <input
             type="text"
@@ -70,8 +84,14 @@ const ContactUs = () => {
           >
             Submit
           </button>
-        </form>
-        <div className="dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 dark:text-primary flex flex-col justify-between bg-primary shadow-lg w-full md:w-[40%] my-2 rounded-lg p-6 ">
+        </motion.form>
+        <motion.div
+          variants={fadeIn("right", 0.5)}
+          initial="hidden"
+          viewport={{ once: false, amount: 0.7 }}
+          whileInView={"show"}
+          className="dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 dark:text-primary flex flex-col justify-between bg-primary shadow-lg w-full md:w-[40%] my-2 rounded-lg p-6 "
+        >
           <div>
             <p className=" text-center text-3xl ">Social Media Links</p>
             <p className="text-xs text-richblue-100 mt-5">
@@ -123,8 +143,8 @@ const ContactUs = () => {
               </span>
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <div className=" h-[20vh]"></div>
     </div>
   );

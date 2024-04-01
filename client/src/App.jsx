@@ -51,6 +51,9 @@ function App() {
       console.log("all projects : ", projects);
     }
   }, [category, projects]);
+  useEffect(() => {
+    document.body.classList.toggle("dark");
+  }, []);
   // useEffect(() => {
   //   // console.log("responsedata : ", responsedata);
   //   console.log("categories : ", category);

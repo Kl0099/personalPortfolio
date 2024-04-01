@@ -10,6 +10,8 @@ import html from "../assets/html.png";
 import express from "../assets/expressjs.png";
 import java from "../assets/java-logo.png";
 import bootstrap from "../assets/bootstrap-5-logo-icon.png";
+import { motion } from "framer-motion";
+import { fadeIn } from "../varients";
 const SkillsAndExperience = () => {
   const skills = [
     {
@@ -85,15 +87,27 @@ const SkillsAndExperience = () => {
     <div className=" w-full sm:w-11/12 max-w-maxContent flex-col flex items-center ">
       <div className=" h-[10vh] md:h-[20vh]"></div>
 
-      <h1 className=" dark:text-richblack-900 text-4xl md:text-[52px] text-center font-semibold">
+      <h1 className="dark:bg-gradient-to-r from-[#93a0a9] via-[#12D8FA] to-[#000402]  dark:text-transparent dark:bg-clip-text dark:pb-5  text-4xl md:text-[52px] text-center font-semibold">
         Skills And{" "}
         <SpanText
           dark={"dark:text-richblack-25"}
           text={"Archivements"}
         />
       </h1>
-      <div className=" gap-[27px] sm:flex-row flex-col flex  my-10 items-center justify-between ">
-        <div className=" items-center justify-center flex w-full  flex-wrap gap-6 sm:w-[40%]">
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        viewport={{ once: false, amount: 0.7 }}
+        whileInView={"show"}
+        className=" gap-[27px] sm:flex-row flex-col flex  my-10 items-center justify-between "
+      >
+        <motion.div
+          variants={fadeIn("right", 0.2)}
+          initial="hidden"
+          viewport={{ once: false, amount: 0.7 }}
+          whileInView={"show"}
+          className=" items-center justify-center flex w-full  flex-wrap gap-6 sm:w-[40%]"
+        >
           {skills.map((skill, index) => (
             <div
               key={index}
@@ -113,8 +127,14 @@ const SkillsAndExperience = () => {
               </p>
             </div>
           ))}
-        </div>
-        <div className="  flex flex-col  p-4">
+        </motion.div>
+        <motion.div
+          variants={fadeIn("left", 0.2)}
+          initial="hidden"
+          viewport={{ once: false, amount: 0.7 }}
+          whileInView={"show"}
+          className="  flex flex-col  p-4"
+        >
           {Archivements.map((item, index) => (
             <div
               key={index}
@@ -141,8 +161,8 @@ const SkillsAndExperience = () => {
               </a>
             </div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

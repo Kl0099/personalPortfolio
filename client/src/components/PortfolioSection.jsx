@@ -3,6 +3,8 @@ import about2 from "../assets/about02.png";
 import about3 from "../assets/about03.png";
 import about4 from "../assets/about04.png";
 import SpanText from "../helpers/SpanText";
+import { motion } from "framer-motion";
+import { fadeIn } from "../varients";
 import {
   RxEyeClosed,
   RxEyeOpen,
@@ -87,8 +89,8 @@ const PortfolioSection = ({ category, allprojects }) => {
   const [currnetLink, setCurrentLink] = useState(category[0]);
   const [projects, setProjects] = useState(allprojects);
   useEffect(() => {
-    console.log("currnetLink :", currnetLink);
-    console.log("categories  :", category[0]);
+    // console.log("currnetLink :", currnetLink);
+    // console.log("categories  :", category[0]);
     const newProjects = allprojects.filter(
       (project) => project.projectCategory === currnetLink
     );
@@ -107,13 +109,19 @@ const PortfolioSection = ({ category, allprojects }) => {
     <div className="mt-20 items-center flex flex-col  ">
       <div className=" h-[0px] sm:h-[10vh]"></div>
       <div className="mx-auto items-center flex flex-col">
-        <h1 className="dark:text-richblack-100 pb-10 font-semibold text-4xl  md:text-[52px]">
+        <motion.h1
+          variants={fadeIn("down", 0.5)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="dark:text-richblack-100 pb-10 font-semibold text-4xl  md:text-[52px]"
+        >
           My Creative{" "}
           <SpanText
             dark={"dark:text-richblack-400"}
             text={"Portfolio Section"}
           />
-        </h1>
+        </motion.h1>
         <p className=" text-left md:text-center text-richblack-400 my-5 w-[95%] md:w-7/12">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
           voluptatem repudiandae eos suscipit deserunt, dolores ut quas, est
