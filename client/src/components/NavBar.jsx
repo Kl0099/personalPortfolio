@@ -5,6 +5,7 @@ import {
   AiOutlineMenuUnfold,
 } from "react-icons/ai";
 import { RxCross1, RxMoon, RxSun } from "react-icons/rx";
+import { Link } from "react-router-dom";
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -54,12 +55,12 @@ const NavBar = () => {
         </div>
         <div className=" hidden sm:flex items-center gap-5 text-pure-greys-400 text-md">
           {links.map((links, index) => (
-            <div
-              key={index}
-              id={links.path}
+            <a
+              key={`${index}`}
+              href={`${links.path}`}
             >
               {links.name}
-            </div>
+            </a>
           ))}
         </div>
         <div>
@@ -87,24 +88,25 @@ const NavBar = () => {
         </div>
       </div>
       {menuOpen && (
-        <div className="h-[600px] bg-white flex items-start  flex-col rounded-lg  shadow-lightgrey shadow-2xl absolute w-[90%]  z-10 top-[0px] right-[0px] transition-transform duration-1000 ease-linear transform translate-x-1">
-          <div className=" mt-20">
+        <div className="h-[600px] dark:bg-richblue-700 bg-white flex items-start  flex-col rounded-lg  shadow-2xl absolute w-[90%]  z-10 top-[0px] right-[0px] transition-transform duration-1000 ease-linear transform translate-x-1">
+          <div className="flex flex-col mt-20">
             {links.map((links, index) => (
-              <div
-                className=" mx-2 p-2 mb-2"
+              <a
+                className=" dark:text-white mx-2 p-2 mb-2"
                 key={index}
-                id={links.path}
+                href={`${links.path}`}
+                onClick={() => setMenuOpen(!menuOpen)}
               >
                 {links.name}
-              </div>
+              </a>
             ))}
             <div>
               <button
-                className=" dark:bg-richblack-300"
+                className=" dark:text-white mx-2 p-2 mb-2"
                 onClick={() => document.body.classList.toggle("dark")}
                 id="darkModeToggle"
               >
-                Toggle Dark Mode
+                Dark Mode
               </button>
             </div>
           </div>

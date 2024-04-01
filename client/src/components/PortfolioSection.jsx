@@ -106,16 +106,13 @@ const PortfolioSection = ({ category, allprojects }) => {
   // }, [currnetLink, projects]);
 
   return (
-    <div className="mt-20 items-center flex flex-col  ">
+    <div
+      id="work"
+      className="mt-20 items-center flex flex-col  "
+    >
       <div className=" h-[0px] sm:h-[10vh]"></div>
       <div className="mx-auto items-center flex flex-col">
-        <motion.h1
-          variants={fadeIn("down", 0.5)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-          className="dark:text-richblack-100 pb-10 font-semibold text-4xl  md:text-[52px]"
-        >
+        <motion.h1 className="dark:text-richblack-100 pb-10 font-semibold text-4xl  lg:text-[52px]">
           My Creative{" "}
           <SpanText
             dark={"dark:text-richblack-400"}
@@ -149,16 +146,16 @@ const PortfolioSection = ({ category, allprojects }) => {
             );
           })}
         </div>
-        <div className=" justify-center items-start  gap-5 flex flex-wrap max-w-maxContent w-11/12">
+        <div className=" justify-center  gap-5   items-start xl:gap-10 grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:max-w-maxContent md:w-11/12">
           {projects.map((project, index) => (
             <div
               key={index}
-              className=" dark:bg-richblue-900 group relative flex flex-col items-center p-3 gap-4 w-[320px] h-[450px] bg-white rounded-lg "
+              className=" dark:bg-richblue-900 group relative flex flex-col items-center p-3 gap-4 w-[280px] sm:w-[320px] h-[450px] bg-white rounded-lg "
             >
               <img
                 alt={project.name}
                 src={project.thumbnail}
-                className=" hover:opacity-90 opacity-80  cursor-pointer shadow-xl object-cover w-[300px] h-[270px] rounded-2xl"
+                className=" hover:opacity-90 opacity-80  cursor-pointer shadow-xl object-cover w-[270px] sm:w-[300px] h-[270px] rounded-2xl"
                 loading="lazy"
               />
               <p className=" dark:bg-richblue-900 dark:shadow-none dark:text-lightgrey z-10 -mt-9 bg-white text-richblue-300 p-2 shadow-lg rounded-lg">

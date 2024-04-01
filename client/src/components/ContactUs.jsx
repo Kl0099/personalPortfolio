@@ -75,13 +75,16 @@ const ContactUs = () => {
     toast.dismiss(toastid);
   };
   return (
-    <div className="   ">
+    <div
+      id="contact"
+      className="   "
+    >
       <div className=" h-[20vh]"></div>
       <p className=" dark:text-primary text-[48px] mb-10 font-inter font-semibold text-center">
         Chat With Me
       </p>
-      <motion.div className=" flex-col md:flex-row flex items-baseline justify-around">
-        <motion.form className=" dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 rounded-lg bg-primary shadow-2xl py-6 justify-center md:w-[40%] w-full items-center flex flex-col gap-7">
+      <motion.div className=" gap-5 flex-col md:flex-row flex items-baseline justify-around">
+        <motion.form className=" dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 rounded-lg bg-primary shadow-2xl py-6 justify-center lg:w-[40%] w-full items-center flex flex-col gap-7">
           <h1 className="mb-4 text-3xl  font-semibold">Contact Us </h1>
           <input
             onChange={(e) => setname(e.target.value)}
@@ -113,7 +116,7 @@ const ContactUs = () => {
             {loading ? "Loading..." : "Submit"}
           </button>
         </motion.form>
-        <motion.div className="dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 dark:text-primary flex flex-col justify-between bg-primary shadow-lg w-full md:w-[40%] my-2 rounded-lg p-6 ">
+        <motion.div className="dark:border-[1px] dark:border-richblack-600 dark:bg-richblack-800 dark:text-primary flex flex-col justify-between bg-primary shadow-lg w-full lg:w-[40%] my-2 rounded-lg p-6 ">
           <div>
             <p className=" text-center text-3xl ">Social Media Links</p>
             <p className="text-xs text-richblue-100 mt-5">
@@ -149,7 +152,7 @@ const ContactUs = () => {
                   size={22}
                 />
               </span>
-              <span className="  text-base md:text-xl text-richblack-500">
+              <span className="  text-base xl:text-xl text-richblack-500">
                 krunallodha1@gmail.com
               </span>
             </p>
