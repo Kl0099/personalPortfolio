@@ -120,10 +120,11 @@ const PortfolioSection = ({ category, allprojects }) => {
           />
         </motion.h1>
         <p className=" text-left md:text-center text-richblack-400 my-5 w-[95%] md:w-7/12">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          voluptatem repudiandae eos suscipit deserunt, dolores ut quas, est
-          maxime, consequatur minus? Ducimus perferendis porro quis ullam, earum
-          provident dolorum qui.
+          This is my portfolio section where I showcase my full-stack projects,
+          mini projects, and various UI/UX designs. Each piece represents my
+          passion for crafting engaging and innovative solutions across the
+          digital landscape. Explore my work to witness the fusion of creativity
+          and technical expertise.
         </p>
 
         <div className=" flex-wrap items-center justify-center flex gap-7 my-10 ">
@@ -152,12 +153,17 @@ const PortfolioSection = ({ category, allprojects }) => {
               key={index}
               className=" dark:bg-richblue-900 group relative flex flex-col items-center p-3 gap-4 w-[280px] sm:w-[320px] h-[450px] bg-white rounded-lg "
             >
-              <img
-                alt={project.name}
-                src={project.thumbnail}
-                className=" hover:opacity-90 opacity-80  cursor-pointer shadow-xl object-cover w-[270px] sm:w-[300px] h-[270px] rounded-2xl"
-                loading="lazy"
-              />
+              <a
+                href={`${project.livelink}`}
+                className=" cursor-pointer "
+              >
+                <img
+                  alt={project.name}
+                  src={project.thumbnail}
+                  className=" hover:opacity-20 opacity-80  cursor-pointer shadow-xl object-cover w-[270px] sm:w-[300px] h-[270px] rounded-2xl"
+                  loading="lazy"
+                />
+              </a>
               <p className=" dark:bg-richblue-900 dark:shadow-none dark:text-lightgrey z-10 -mt-9 bg-white text-richblue-300 p-2 shadow-lg rounded-lg">
                 {project.projectCategory}
               </p>
@@ -170,18 +176,18 @@ const PortfolioSection = ({ category, allprojects }) => {
                 </p>
               </div>
               <div className=" px-5 absolute top-10  pb-2 w-full justify-between flex ">
-                <span>
+                <a href={`${project.livelink}`}>
                   <RxPencil1
                     className=" cursor-pointer hover:scale-110"
                     fontSize={24}
                   />
-                </span>
-                <span>
+                </a>
+                <a href={`${project.githublink}`}>
                   <RxGithubLogo
                     className=" cursor-pointer hover:scale-110"
                     fontSize={24}
                   />
-                </span>
+                </a>
               </div>
             </div>
           ))}

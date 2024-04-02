@@ -6,6 +6,9 @@ import {
 } from "react-icons/ai";
 import { RxCross1, RxMoon, RxSun } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { FaMoon } from "react-icons/fa";
+import { IoSunny } from "react-icons/io5";
+import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -63,14 +66,31 @@ const NavBar = () => {
             </a>
           ))}
         </div>
-        <div>
+        <div className=" hidden sm:flex  flex-col items-center">
           <button
-            className=" sm:block hidden dark:bg-richblack-300"
+            className=" p-2 bg-transparent"
             onClick={setDarkMode}
             id="darkModeToggle"
           >
-            {isDarkMode ? <RxMoon size={32} /> : <RxSun size={32} />}
+            {isDarkMode ? (
+              <FaToggleOn
+                className={isDarkMode ? " text-primary " : ""}
+                color="white"
+                fontWeight={100}
+                size={32}
+              />
+            ) : (
+              <FaToggleOff
+                className={isDarkMode ? "   text-black" : ""}
+                color="black"
+                fontWeight={100}
+                size={32}
+              />
+            )}
           </button>
+          <p className=" dark:text-primary text-black text-xs ">
+            {isDarkMode ? "Dark On" : "Dark Off"}
+          </p>
         </div>
 
         <div
@@ -103,10 +123,13 @@ const NavBar = () => {
             <div>
               <button
                 className=" dark:text-white mx-2 p-2 mb-2"
-                onClick={() => document.body.classList.toggle("dark")}
+                onClick={() => {
+                  setDarkMode();
+                  setMenuOpen(!menuOpen);
+                }}
                 id="darkModeToggle"
               >
-                Dark Mode
+                {isDarkMode ? "Dark on" : "Dark off"}
               </button>
             </div>
           </div>
