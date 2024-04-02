@@ -67,19 +67,22 @@ const SkillsAndExperience = () => {
     {
       title: "Runner Up in technosparx",
       description: "runner up in technosparx event in ait college year 2024",
-      certificate: "",
+      certificate:
+        "https://drive.google.com/file/d/17bHzClO3-PQVNuUWUMDvURypnrf0Icn_/view?usp=drivesdk",
       year: "2024",
     },
     {
       title: "Participate in Tic Tac Toe Hackathon",
       description: "participate in hackathone year 2023",
-      certificate: "",
+      certificate:
+        "https://drive.google.com/file/d/17fuQUKeqbnBELoyRpif2qYJhUT0WteU6/view?usp=drivesdk",
       year: "2023",
     },
     {
       title: "participate in ingenious Hackathon 5.0",
       description: "participate in ingenious Hackathon 5.0 year 2024",
-      certificate: "",
+      certificate:
+        "https://drive.google.com/file/d/17dEeSzzyzL_TOe_dRdLtLcEPVGXbkCxo/view?usp=drivesdk",
       year: "2024",
     },
   ];
