@@ -8,6 +8,7 @@ import PortfolioSection from "./components/PortfolioSection";
 import SkillsAndExperience from "./components/SkillsAndExperience";
 import ContactUs from "./components/ContactUs";
 import axios from "axios";
+import { getAlldetailsUrl } from "./helpers/apiurl";
 function App() {
   const [category, setCategory] = useState(null);
   const [projects, SetProjects] = useState(null);
@@ -18,12 +19,9 @@ function App() {
     setLoading(true);
     try {
       console.log("Fetching data...");
-      const response = await axios.get(
-        "http://localhost:4000/api/v1/getAllDetails",
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(getAlldetailsUrl, {
+        withCredentials: true,
+      });
       if (response) {
         // console.log(response);
         setCategory(response.data.category.map((item) => item.name));
