@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { toast } from "react-hot-toast";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
@@ -59,7 +59,9 @@ function App() {
   // }, [responsedata, category, projects]);
 
   return loading ? (
-    <div>Loading...</div>
+    <div className=" w-full h-[100vh] bg-richblack-900 items-center flex justify-center">
+      <div className="spinner "></div>
+    </div>
   ) : (
     category && projects && (
       <div className="  w-full dark:bg-richblack-900 relative text-black">
@@ -92,6 +94,7 @@ function App() {
       </div>
     )
   );
+  // return <div className="spinner"></div>;
 }
 
 export default App;
